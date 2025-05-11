@@ -1,0 +1,45 @@
+Step-by-Step Guide to Execute the AI Agent
+
+1. Install Required Libraries :
+pip install -r requirements.txt
+
+2. Get Gemini API Key
+Go to https://aistudio.google.com/app/apikey
+
+Copy your API key
+
+3. Run the Chat Agent
+From the folder where main.py is located, run:
+python main.py --api_key=YOUR_API_KEY --chat
+python main.py --api_key=AIzaSyDWU96YGaNJWcsuRx9tcwHGTbAHTGv4UFc --chat
+Replace YOUR_API_KEY with your actual Gemini API key.
+
+4. Use the Agent Interactively
+▶️ Start a new game:
+💬 Your input: new
+
+🧠 Describe your 2D game idea: a top-down arcade with collectibles
+Avoid using words that can be flagged by the AI like: Kill, death, Gun, etc
+
+→ The agent will show the code and ask:
+💬 Do you want to write this code to file? (yes/no):
+🔁 Modify the game:
+
+💬 Your input: Add player health and enemies
+
+→ Again, it previews the modified code and asks for confirmation.
+
+❌ Exit:
+💬 Your input: exit
+
+5. Resulting File
+After confirmation, the generated/modified code will be saved as:
+generated_game.py
+
+You can open and run this in VS Code, PyCharm, or from terminal.
+
+6. Optional: Run the Game
+If the generated game uses Pygame or similar libraries:
+
+pip install pygame
+python generated_game.py

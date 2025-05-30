@@ -1,4 +1,4 @@
-def read_code(filename: str = "generated_game.py") -> str:
+def read_code(filename: str = "generated_code.py") -> str:
     try:
         with open(filename, "r", encoding="utf-8") as f:
             return f.read()
@@ -6,7 +6,7 @@ def read_code(filename: str = "generated_game.py") -> str:
         return ""
 
 
-def write_code_to_file(code: str, filename: str = "generated_game.py"):
+def write_code_to_file(code: str, filename: str = "generated_code.py"):
     with open(filename, "w", encoding="utf-8") as f:
         f.write(code)
     return f"✅ Code written to {filename}"

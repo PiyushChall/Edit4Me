@@ -1,9 +1,12 @@
-from agent import GameAIAgent
+from agent import PythonAIAgent  # Changed import
 
 def start_chat(api_key: str):
-    agent = GameAIAgent(api_key)
-    filename = "generated_game.py"
-    print("🎮 Welcome to EditForMe a 2D Game AI Agent!")
+    agent = PythonAIAgent(api_key)  # Changed class instantiation
+    filename = "generated_code.py"  # Changed default filename
+    # Changed welcome message
+    print("🐍 Welcome to EditForMe - Your Python AI Code Assistant!")
+    # Note: The next line still refers to 'game' but instructions didn't specify changing it.
+    # If this needs to change, a new instruction would be required.
     print("📝 Type 'new' to generate a new game, 'exit' to quit.")
 
     while True:
@@ -14,11 +17,13 @@ def start_chat(api_key: str):
             break
 
         elif command.strip().lower() == "new":
-            game_idea = input("🧠 Describe your 2D game idea: ")
+            # Changed input prompt
+            game_idea = input("📝 What Python script would you like to generate? ")
             result = agent.handle_prompt(game_idea, filename)
             print(result)
 
         else:
-            print("🔧 Applying your change to the existing game...")
+            # Changed message
+            print("🔧 Applying your change to the existing code...")
             result = agent.handle_modification(command, filename)
             print(result)
